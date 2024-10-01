@@ -1,0 +1,9 @@
+service : {
+    "init" : () -> ();
+    "name" : () -> (text) query;
+    "symbol" : () -> (text) query;
+    "decimals" : () -> (nat8) query;
+    "total_supply" : () -> (nat) query;
+    "balance_of" : (principal) -> (nat) query;
+    "transfer" : (principal, nat) -> (bool);
+}

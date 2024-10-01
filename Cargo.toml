@@ -1,5 +1,6 @@
 [workspace]
 members = [
-    "src/hello_backend"
+    "src/hello_backend",
+    "src/efg_token"
 ]
 resolver = "2"
