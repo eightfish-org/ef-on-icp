@@ -6,4 +6,6 @@ service : {
     "total_supply" : () -> (nat) query;
     "balance_of" : (principal) -> (nat) query;
     "transfer" : (principal, nat) -> (bool);
+    "mint" : (principal, nat) -> (bool);
+    "get_owner" : () -> (principal) query;
 }

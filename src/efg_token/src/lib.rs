@@ -88,5 +88,25 @@ fn transfer(to: Principal, amount: u128) -> bool {
     })
 }
 
+#[update]
+fn mint(to: Principal, amount: u128) -> bool {
+    let caller = ic_cdk::caller();
+    TOKEN.with(|token| {
+        let mut token = token.borrow_mut();
+        if caller != token.owner {
+            return false; // Only the owner can mint
+        }
+        token.total_supply += amount;
+        let to_balance = token.balances.get(&to).cloned().unwrap_or(0);
+        token.balances.insert(to, to_balance + amount);
+        true
+    })
+}
+
+#[query]
+fn get_owner() -> Principal {
+    TOKEN.with(|token| token.borrow().owner)
+}
+
 // Candid export
 //ic_cdk::export_candid!();
