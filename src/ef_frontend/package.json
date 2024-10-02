@@ -1,10 +1,10 @@
 {
-  "name": "hello_frontend",
+  "name": "ef_frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "setup": "npm i && dfx canister create hello_backend && dfx generate hello_backend && dfx deploy",
+    "setup": "npm i && dfx canister create ef_backend && dfx generate ef_backend && dfx deploy",
     "start": "vite --port 3000",
     "prebuild": "dfx generate",
     "build": "tsc && vite build",

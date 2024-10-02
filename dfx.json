@@ -5,16 +5,16 @@
       "package": "efg_token",
       "candid": "src/efg_token/efg_token.did"
     },
-    "hello_backend": {
-      "candid": "src/hello_backend/hello_backend.did",
-      "package": "hello_backend",
+    "ef_backend": {
+      "candid": "src/ef_backend/ef_backend.did",
+      "package": "ef_backend",
       "type": "rust"
     },
-    "hello_frontend": {
-      "dependencies": ["hello_backend"],
-      "source": ["src/hello_frontend/dist"],
+    "ef_frontend": {
+      "dependencies": ["ef_backend"],
+      "source": ["src/ef_frontend/dist"],
       "type": "assets",
-      "workspace": "hello_frontend"
+      "workspace": "ef_frontend"
     }
   },
   "defaults": {

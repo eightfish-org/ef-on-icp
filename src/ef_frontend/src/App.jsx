@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { hello_backend } from 'declarations/hello_backend';
+import { ef_backend } from 'declarations/ef_backend';
 
 function App() {
   const [heartbeats, setHeartbeats] = useState([]);
@@ -11,14 +11,14 @@ function App() {
   }, []);
 
   async function fetchHeartbeats() {
-    const result = await hello_backend.get_all_heartbeats();
+    const result = await ef_backend.get_all_heartbeats();
     setHeartbeats(result);
   }
 
   async function handleSubmit(event) {
     event.preventDefault();
     if (subject && time) {
-      await hello_backend.record_heartbeat(subject, time);
+      await ef_backend.record_heartbeat(subject, time);
       setAppId('');
       setStatus('');
       fetchHeartbeats();

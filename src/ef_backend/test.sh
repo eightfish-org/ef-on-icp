@@ -5,7 +5,7 @@
 #dfx deploy
 
 #CANISTER_ID=$(dfx canister id your_canister_name)
-CANISTER_ID=bd3sg-teaaa-aaaaa-qaaba-cai
+CANISTER_ID=b77ix-eeaaa-aaaaa-qaada-cai
 # Register a new protocol
 dfx canister call $CANISTER_ID register_protocol '("protocol2")'
 
