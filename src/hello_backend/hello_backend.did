@@ -1,5 +1,10 @@
 service : {
-  record_heartbeat : (text, text) -> ();
-  get_last_heartbeat : (text) -> (opt text) query;
-  get_all_heartbeats : () -> (vec record { text; text }) query;
+    // Update calls
+    record_heartbeat: (text, text) -> ();
+    register_protocol: (text) -> ();
+
+    // Query calls
+    get_last_heartbeat: (text) -> (opt text) query;
+    get_all_heartbeats: () -> (vec record { text; text }) query;
+    get_registered_protocols: () -> (vec text) query;
 }
